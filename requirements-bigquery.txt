@@ -1,0 +1,5 @@
+# Only needed with SINYAL_VERI_KAYNAGI=bigquery
+-r requirements.txt
+google-cloud-bigquery>=3.11
+google-cloud-bigquery-storage>=2.22
+db-dtypes>=1.1

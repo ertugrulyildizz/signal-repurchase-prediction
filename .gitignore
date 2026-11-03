@@ -1,0 +1,19 @@
+# Data never enters the repository (synthetic or real)
+data/
+*.parquet
+*.csv
+*.joblib
+docs/sonuclar/*
+!docs/sonuclar/.gitkeep
+notebooks/figurler/
+
+# Environments, caches, secrets
+.venv/
+venv*/
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+mlruns/
+mlartifacts/
+.env
+*.json.key

@@ -1,0 +1,15 @@
+# Python 3.10 / 3.11
+pandas>=2.0,<2.3
+numpy>=1.24,<2.0
+pyarrow>=14,<18
+scipy>=1.10
+scikit-learn>=1.3,<1.6
+lightgbm>=4.0
+lifetimes==0.11.3        # BG/NBD baseline (old but stable)
+shap>=0.44               # only for the beeswarm plot; SHAP values come from LightGBM itself
+matplotlib>=3.7
+joblib>=1.3
+pytest>=7.4
+jupyter
+ipykernel
+# optional: mlflow>=2.9   (notebook 02 logs runs if installed)
