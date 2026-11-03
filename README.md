@@ -66,7 +66,7 @@ Actual numbers are confidential and are not published here.
 | Behaviour levels drift with season and tracking coverage | Behaviour counts → **percentile rank within the cutoff, among active customers only** | `src/ozellikler.py` (`goreli_davranis`) |
 | Inflation in monetary features | Divide by the cutoff's median unit price (index) | `src/ozellikler.py` (`endeksle`) |
 | Ranking is fine but probabilities drift by season | Isotonic + **level shift** to last year's same-month rate | `src/kalibrasyon.py` |
-| Leakage regressions creep back in | 32 `pytest` tests (label windows, target columns, raw currency, feature sets…) | `tests/` |
+| Leakage regressions creep back in | 34 `pytest` tests (label windows, target columns, raw currency, feature sets, a model-training smoke test…) | `tests/` |
 | "Did you change the forecast after seeing the outcome?" | Live scores sealed with SHA-256; verification script | `notebooks/06_…`, `scripts/07_ara_okuma.py` |
 | Accuracy is meaningless at ~15 % positives | Business metric **capture@10** (share of all buyers in the top-scored 10 %), primary metric PR-AUC; ROC-AUC reported only | `src/degerlendirme.py` |
 
@@ -91,7 +91,7 @@ py -3.10 -m venv .venv               # or: python -m venv .venv
 pip install -r requirements.txt
 
 python -m sentetik.uret              # synthetic data → data\*.parquet (~10 s, 60k customers)
-pytest -q                            # expect: 32 passed
+pytest -q                            # expect: 34 passed
 ```
 
 **macOS / Linux**
@@ -104,7 +104,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 python -m sentetik.uret              # synthetic data → data/*.parquet (~10 s, 60k customers)
-pytest -q                            # expect: 32 passed
+pytest -q                            # expect: 34 passed
 ```
 
 `ModuleNotFoundError: No module named 'src'` means you are one folder too high: `cd` into
