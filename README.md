@@ -78,18 +78,37 @@ hypotheses, because the model predicts *who will buy*, not *whom contact will ch
 
 ## Quickstart
 
-Python 3.10 or 3.11.
+Python 3.10 or 3.11. Run every command **inside the repository folder**
+(`signal-repurchase-prediction`); the tests rely on `pytest.ini` there.
+
+**Windows (PowerShell)**
+
+```powershell
+git clone https://github.com/ertugrulyildizz/signal-repurchase-prediction.git
+cd signal-repurchase-prediction
+py -3.10 -m venv .venv               # or: python -m venv .venv
+.venv\Scripts\Activate.ps1           # if blocked: Set-ExecutionPolicy -Scope Process Bypass
+pip install -r requirements.txt
+
+python -m sentetik.uret              # synthetic data → data\*.parquet (~10 s, 60k customers)
+pytest -q                            # expect: 32 passed
+```
+
+**macOS / Linux**
 
 ```bash
-git clone https://github.com/<your-user>/signal-repurchase-prediction.git
+git clone https://github.com/ertugrulyildizz/signal-repurchase-prediction.git
 cd signal-repurchase-prediction
-python -m venv .venv
-source .venv/bin/activate            # Windows: .venv\Scripts\Activate.ps1
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 
 python -m sentetik.uret              # synthetic data → data/*.parquet (~10 s, 60k customers)
-pytest -q                            # 32 tests
+pytest -q                            # expect: 32 passed
 ```
+
+`ModuleNotFoundError: No module named 'src'` means you are one folder too high: `cd` into
+`signal-repurchase-prediction` and run again.
 
 Then run the notebooks **in order** (`jupyter lab`, open `notebooks/`):
 
@@ -162,6 +181,7 @@ feature, `musteri_id` = customer id, `davranis` = behaviour, `capture@10`).
 
 ## License
 
-MIT — see `LICENSE`.
+No open-source license: all rights reserved. The code is shared for portfolio and
+educational viewing; please ask before reusing it.
 
 Author: **Ertuğrul Yıldız**
